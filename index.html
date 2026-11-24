@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Cris07 — modern fashion and everyday essentials.">
+<title>Cris07 | Premium Fashion</title>
+<style>
+:root{--ink:#171717;--paper:#f7f6f2;--muted:#777;--line:#e7e3dc;--gold:#b48b5a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}button,input,select{font:inherit}button{cursor:pointer}
+.announcement{background:#171717;color:white;text-align:center;padding:9px;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+header{position:sticky;top:0;z-index:5;background:#f7f6f2f2;border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.nav{max-width:1180px;margin:auto;padding:17px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:28px;font-weight:900;letter-spacing:-2px;text-decoration:none;color:var(--ink)}.logo span{color:var(--gold)}
+.navlinks{display:flex;gap:25px}.navlinks a{color:var(--ink);text-decoration:none;font-size:14px}
+.cart-btn,.dark-btn{background:var(--ink);color:white;border:0;padding:12px 17px}.cart-btn{border-radius:2px}
+.hero{min-height:490px;background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.08)),url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600') center/cover;display:flex;align-items:center;color:white}
+.hero-inner{width:min(1100px,88%);margin:auto;padding:70px 0}.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#e4c49d}
+h1{font-size:clamp(48px,8vw,86px);line-height:.98;max-width:650px;margin:18px 0}.hero p{max-width:430px;line-height:1.7;color:#eee;margin-bottom:28px}
+.light-btn{background:white;color:#171717;border:0;padding:15px 22px;font-weight:bold;letter-spacing:.06em}
+main{max-width:1180px;margin:auto;padding:64px 24px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:25px;flex-wrap:wrap}
+h2{font-size:32px;margin:0}.sub{color:var(--muted);font-size:14px;margin-top:8px}
+.tools{display:flex;gap:10px;flex-wrap:wrap}.search{border:1px solid var(--line);background:white;padding:11px 14px;min-width:220px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:25px}.filter{border:1px solid var(--line);background:white;padding:9px 15px}.filter.active{background:#171717;color:white;border-color:#171717}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.product{background:white}.product img{width:100%;height:275px;object-fit:cover;display:block;background:#eee}.product-info{padding:15px}.product h3{font-size:15px;margin:0 0 9px}.price{font-weight:bold;margin-bottom:14px}.add{width:100%;background:#171717;color:white;border:0;padding:12px;font-size:12px;letter-spacing:.08em}.add:hover,.dark-btn:hover{background:#444}
+.benefits{background:#eeece6;padding:35px 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}.benefits h3{font-size:14px}.benefits p{font-size:13px;color:var(--muted)}
+footer{background:#171717;color:white;text-align:center;padding:38px 20px}footer p{color:#bbb;font-size:13px}.empty{text-align:center;padding:35px;color:var(--muted);grid-column:1/-1}
+.overlay,.checkout{display:none;position:fixed;inset:0;background:#0008;z-index:20}.overlay.show{display:block}.cart-panel{background:white;position:absolute;right:0;top:0;height:100%;width:min(430px,100%);padding:24px;overflow:auto}
+.row{display:flex;justify-content:space-between;align-items:center;gap:15px}.close{border:0;background:none;font-size:27px}.cart-line{display:flex;gap:13px;padding:15px 0;border-bottom:1px solid var(--line)}.cart-line img{width:72px;height:85px;object-fit:cover}.cart-detail{flex:1}.cart-detail strong{font-size:14px}.qty{display:flex;gap:10px;align-items:center;margin-top:9px}.qty button{border:1px solid var(--line);background:white;padding:3px 9px}.remove{border:0;background:none;color:#9b3b32;font-size:12px;margin-top:8px;padding:0}.total{border-top:1px solid var(--line);padding-top:18px;margin-top:18px;font-weight:bold;font-size:19px}.checkout-btn{width:100%;margin-top:18px;padding:15px;background:#171717;color:white;border:0}
+.checkout{align-items:center;justify-content:center;padding:16px}.checkout.show{display:flex}.checkout-box{background:white;width:min(460px,100%);padding:25px;max-height:92vh;overflow:auto}.checkout-box h2{font-size:25px}.checkout-box label{display:block;font-size:12px;font-weight:bold;margin-top:13px}.checkout-box input,.checkout-box select{width:100%;padding:12px;border:1px solid var(--line);margin-top:6px}.note{font-size:12px;line-height:1.5;color:var(--muted)}
+@media(max-width:850px){.products{grid-template-columns:repeat(2,1fr)}.product img{height:250px}}
+@media(max-width:560px){.nav{padding:14px 16px}.navlinks{display:none}.hero{min-height:420px}.hero-inner{width:88%}main{padding:45px 16px}.products{gap:12px}.product img{height:195px}.benefits{grid-template-columns:1fr}.section-head{align-items:start}}
+</style>
+</head>
+<body>
+<div class="announcement">New season arrivals · Find your everyday style</div>
+<header><div class="nav">
+<a class="logo" href="#home">CRIS<span>07</span>.</a>
+<nav class="navlinks"><a href="#home">Home</a><a href="#shop">Shop</a><a href="#about">Our promise</a></nav>
+<button class="cart-btn" onclick="openCart()">Bag (<span id="count">0</span>)</button>
+</div></header>
+<section class="hero" id="home"><div class="hero-inner">
+<div class="eyebrow">The Cris07 collection</div><h1>Wear your<br>own story.</h1>
+<p>Thoughtful everyday fashion, timeless essentials and fresh looks. Discover pieces that feel like you.</p>
+<button class="light-btn" onclick="document.getElementById('shop').scrollIntoView()">SHOP THE COLLECTION</button>
+</div></section>
+<main id="shop">
+<div class="section-head"><div><h2>Shop the collection</h2><div class="sub">A few of our favourite looks.</div></div>
+<div class="tools"><input class="search" id="search" placeholder="Search products…" oninput="renderProducts()"></div></div>
+<div class="filters">
+<button class="filter active" onclick="setCategory('All',this)">All</button>
+<button class="filter" onclick="setCategory('Men',this)">Men</button>
+<button class="filter" onclick="setCategory('Women',this)">Women</button>
+<button class="filter" onclick="setCategory('Accessories',this)">Accessories</button>
+</div>
+<div class="products" id="products"></div>
+</main>
+<section class="benefits" id="about">
+<div><h3>CURATED STYLE</h3><p>Easy-to-wear pieces for every day.</p></div>
+<div><h3>MADE FOR YOU</h3><p>A simple, thoughtful shopping experience.</p></div>
+<div><h3>HERE TO HELP</h3><p>Friendly support when you need it.</p></div>
+</section>
+<footer><a class="logo" href="#home" style="color:white">CRIS<span>07</span>.</a><p>Wear your own story.</p><p>© <span id="year"></span> Cris07. All rights reserved.</p></footer>
+
+<div class="overlay" id="overlay" onclick="backdropClose(event)"><aside class="cart-panel">
+<div class="row"><h2>Your bag</h2><button class="close" onclick="closeCart()" aria-label="Close cart">×</button></div>
+<div id="cartItems"></div><div class="total">Subtotal: ₹<span id="total">0</span></div>
+<p class="note">Delivery charges, if any, can be confirmed before the order is placed.</p>
+<button class="checkout-btn" onclick="openCheckout()">CONTINUE TO CHECKOUT</button>
+</aside></div>
+<div class="checkout" id="checkout"><div class="checkout-box">
+<div class="row"><h2>Delivery details</h2><button class="close" onclick="closeCheckout()">×</button></div>
+<form id="orderForm">
+<label for="customer">Full name</label><input id="customer" name="customer" required autocomplete="name">
+<label for="phone">Mobile number</label><input id="phone" name="phone" type="tel" pattern="[0-9]{10}" placeholder="10-digit number" required>
+<label for="address">Full delivery address</label><input id="address" name="address" required autocomplete="street-address">
+<label for="payment">Payment preference</label><select id="payment" name="payment"><option>Cash on Delivery</option><option>UPI / Card (not yet enabled)</option></select>
+<p class="note">This is a front-end demo. Orders are not sent to a store, and online payments are not processed. A secure backend and payment-gateway setup are needed before accepting real orders.</p>
+<button class="checkout-btn" type="submit">PLACE DEMO ORDER</button>
+</form>
+</div></div>
+<script>
+const products=[
+{id:1,name:"Classic White Shirt",price:899,category:"Men",image:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=700"},
+{id:2,name:"Everyday Denim Jacket",price:1799,category:"Men",image:"https://images.unsplash.com/photo-1551028719-00167b16eac5?w=700"},
+{id:3,name:"Summer Dress",price:1299,category:"Women",image:"https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=700"},
+{id:4,name:"Modern Casual Look",price:1499,category:"Women",image:"https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700"},
+{id:5,name:"Classic Wristwatch",price:999,category:"Accessories",image:"https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=700"},
+{id:6,name:"Everyday Sunglasses",price:699,category:"Accessories",image:"https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=700"},
+{id:7,name:"Statement Sneakers",price:1599,category:"Men",image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700"},
+{id:8,name:"Minimal Shoulder Bag",price:1199,category:"Women",image:"https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=700"}
+];
+let cart=[],category="All";
+const money=n=>n.toLocaleString("en-IN");
+function renderProducts(){
+ const q=document.getElementById("search").value.trim().toLowerCase();
+ const list=products.filter(p=>(category==="All"||p.category===category)&&p.name.toLowerCase().includes(q));
+ document.getElementById("products").innerHTML=list.length?list.map(p=>`
+ <article class="product"><img src="${p.image}" alt="${p.name}" loading="lazy">
+ <div class="product-info"><h3>${p.name}</h3><div class="price">₹${money(p.price)}</div>
+ <button class="add" onclick="addToCart(${p.id})">ADD TO BAG</button></div></article>`).join(""):'<div class="empty">No products match your search.</div>';
+}
+function setCategory(c,button){category=c;document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));button.classList.add("active");renderProducts();}
+function addToCart(id){const item=cart.find(x=>x.id===id);if(item)item.qty++;else cart.push({id,qty:1});updateCart();}
+function changeQty(id,delta){const item=cart.find(x=>x.id===id);if(!item)return;item.qty+=delta;if(item.qty<1)cart=cart.filter(x=>x.id!==id);updateCart();}
+function updateCart(){
+ const count=cart.reduce((s,x)=>s+x.qty,0);document.getElementById("count").textContent=count;
+ document.getElementById("cartItems").innerHTML=cart.length?cart.map(x=>{const p=products.find(y=>y.id===x.id);return `<div class="cart-line"><img src="${p.image}" alt=""><div class="cart-detail"><strong>${p.name}</strong><div>₹${money(p.price)}</div><div class="qty"><button onclick="changeQty(${p.id},-1)">−</button>${x.qty}<button onclick="changeQty(${p.id},1)">+</button></div><button class="remove" onclick="removeItem(${p.id})">Remove</button></div></div>`}).join(""):'<p class="note">Your bag is empty. Add something you love.</p>';
+ const total=cart.reduce((s,x)=>s+products.find(p=>p.id===x.id).price*x.qty,0);document.getElementById("total").textContent=money(total);
+}
+function removeItem(id){cart=cart.filter(x=>x.id!==id);updateCart();}
+function openCart(){updateCart();document.getElementById("overlay").classList.add("show");}
+function closeCart(){document.getElementById("overlay").classList.remove("show");}
+function backdropClose(e){if(e.target.id==="overlay")closeCart();}
+function openCheckout(){if(!cart.length){alert("Your bag is empty.");return;}closeCart();document.getElementById("checkout").classList.add("show");}
+function closeCheckout(){document.getElementById("checkout").classList.remove("show");}
+document.getElementById("orderForm").addEventListener("submit",e=>{
+ e.preventDefault();if(!cart.length)return;
+ const data=new FormData(e.target);const order=cart.map(x=>{const p=products.find(y=>y.id===x.id);return `${p.name} × ${x.qty} — ₹${p.price*x.qty}`}).join("\n");
+ const total=cart.reduce((s,x)=>s+products.find(p=>p.id===x.id).price*x.qty,0);
+ alert(`Demo order prepared!\n\nCustomer: ${data.get("customer")}\nPhone: ${data.get("phone")}\nAddress: ${data.get("address")}\nPayment preference: ${data.get("payment")}\n\n${order}\n\nTotal: ₹${money(total)}\n\nThis demo does not transmit or save your order.`);
+ cart=[];updateCart();e.target.reset();closeCheckout();
+});
+document.getElementById("year").textContent=new Date().getFullYear();
+renderProducts();updateCart();
+</script>
+</body>
+</html>
